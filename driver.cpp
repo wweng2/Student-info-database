@@ -8,16 +8,23 @@ using namespace std;
 
 
 int main() {
+
+  /* These intialzation of variables for the use thoughout the program like the while loop varible and , the max length is assign to be 26 letters long for the name
   
+    */
   int max_length_data = 26;
   char data[max_length_data];
   int students = 0;
   int choice = 0;
   int count = 0;
 
+  // The string values for the starting grades for new students and the protoc's name
   string intial_value = "00";
   string proctor = "";
 
+  /* Open the databse and reads how many lines are written in the 
+  database to use for looping though the file and adding new students
+  */
   ifstream f("student_database.txt");
   string line;
 
@@ -25,7 +32,8 @@ int main() {
       count++;
   }
   cout<<"Welcome to the Student Grade database"<<endl;
-  
+
+  // The UI to allow for the User to choice 4 option they can do 
   while(choice != 5){
 
       cout<<"Here is the Available options: \n"
@@ -35,14 +43,17 @@ int main() {
         << " N4: Admin View \n"
         << " N5: Exit \n";
 
-      cin >> choice; 
+      cin >> choice; // Inserting the option the user choose
 
       if(choice == 1){
 
+        // Choose how many students to be added
         cout<<"How many students are you adding"<<endl;
         cin>> students;
         count = count + students;
 
+        /* This add the new students with their name and protocr idea
+        with the intial values for the two class of 0 */
 
         for(int i = 0 ; i < students ; i++){
 
@@ -88,10 +99,16 @@ int main() {
       
       else if(choice == 2){
 
+        /* The student login and requires the regirstration number 
+        associated for the thier own grades*/
+        
         char RegisNum[9];
         cout<<"Enter your Registration number";
         cin>>RegisNum;
 
+        /* Opens the files and use strcmp to find the correct person
+        based on the regirstration number stores in the databse the number the user puts in and allow for the view of grades*/
+        
         ifstream infile;
         int check = 0;
         infile.open("student_database.txt", ios::in);
@@ -123,6 +140,8 @@ int main() {
           }
         }
 
+      /* The Error warning when the number enter is not in the database */
+        
         if(check == 0){
           cout<<"Sorry , Data relating to this Registration number is not found"<< " please enter the correct number"<<endl;
         }
@@ -131,10 +150,12 @@ int main() {
       
       else if(choice == 3){
 
+        // The Teacher login to changes grades for students
         char subjectcode[5];
         cout<<"Please enter your subject code"<<endl;
         cin>>subjectcode;
 
+        // The current classses and grades in the teacher can modify
         string code1 = "CS101";
         string code2 = "CS202";
         string mark = "";
@@ -150,6 +171,7 @@ int main() {
 
         if(choice == 1){
 
+          /* If chosen the teacher will go though each students and with the right subject , make grade modication to only that class*/
           cout<<"Warning, You have to updata or add marks for all the students that is in the database, please prepare for this \n";
         
       
@@ -180,7 +202,7 @@ int main() {
           }
         }
 
-
+        // Views all the grades for the students of the first calss
         else if(choice == 2){
           infile.open("student_database.txt", ios::in);
           if (strcmp(subjectcode, code1.c_str()) == 0) {
@@ -200,6 +222,8 @@ int main() {
           infile.close();
           infile.open("student_database.txt", ios::in);
 
+          // Views all the grades for the students of the second calss
+
           if (strcmp(subjectcode, code2.c_str()) == 0) {
               cout << "Registration number - Marks\n"
                    << endl;
@@ -216,19 +240,21 @@ int main() {
           }
 
           infile.close();
-
+          // Error warning for when the subject code is not found
           if (check == 0) {
           cout << "No such subject code found!" << endl;
           }
         }
       
-
+      /* Using the admin password to view all the grades */
+        
       else if(choice == 4){
         char password[25];
         cout<<"Enter the Adim password";
 
         cin>>password;
 
+        // The password comaprison to make sure its the right person
         string adim_password = "DJE345";
 
         if(strcmp(password,adim_password.c_str()) == 0){
@@ -237,6 +263,8 @@ int main() {
           
           ifstream infile;
 
+          /* open the file and loops though the data with each student does a while loop in order to retreive each part of the data*/
+          
           infile.open("student_database.txt", ios::in);
           char data[20];
 
@@ -261,10 +289,12 @@ int main() {
   
   
 
+
+  
+  }
+  // Ending Message when the User ends the while loop
   cout<<"Thanks for using the Student Grade Database , Have a Nice day \n";
 
   return 0;
-  
-  }
   
 }

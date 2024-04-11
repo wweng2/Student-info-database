@@ -41,10 +41,3 @@ This tells you the system has closed and the files has been closed.
 
 
 
-
-
-![N3](https://github.com/wweng2/Student-info-database/assets/99202437/e752de72-5e63-4d33-adce-9608ffcf78e7)
-
-
-
-

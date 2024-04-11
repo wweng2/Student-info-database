@@ -20,6 +20,29 @@ This option allows for the student to login to the database to see their grades 
 
 By choosing option 3 you get 
 
+![N3](https://github.com/wweng2/Student-info-database/assets/99202437/dcc83213-0d16-4179-8b84-1247f6c623cc)
+
+This option allows for the teacher to login in to thier class to change the grades of that students, the teacher will enter the subject code for that class then can change the grade of that subject for every student but if the code is not right then an error meesage is sent and the user sent back to the beginning screen
+
+By Choosing option 4 you get 
+
+![N4](https://github.com/wweng2/Student-info-database/assets/99202437/199a0e63-58b1-499a-bb2f-7844f7937784)
+
+You get the adim screen by using the adim password the user can get asses to all the user grades and see it without needing a subject code
+
+For option 5 it closes the system with a ending screen
+
+![N5](https://github.com/wweng2/Student-info-database/assets/99202437/094e2967-b16e-48b0-a479-bd43458bbc6a)
+
+This tells you the system has closed and the files has been closed.
+
+
+
+
+
+
+
+
 ![N3](https://github.com/wweng2/Student-info-database/assets/99202437/e752de72-5e63-4d33-adce-9608ffcf78e7)
 
 
